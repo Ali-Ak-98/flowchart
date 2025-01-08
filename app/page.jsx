@@ -1,3 +1,5 @@
+'use strict';
+
 import { fetchAPI } from '@/lib/api';
 import {useEffect} from "react";
 
