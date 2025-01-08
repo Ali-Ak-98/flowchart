@@ -1,8 +1,17 @@
-import { fetchAPI } from '@/lib/api';
+'use client'
 
-export default async function AboutPage() {
-    const content = await fetchAPI('/about-pages');
-    console.log(content)
+import { fetchAPI } from '@/lib/api';
+import {useEffect, useState} from "react";
+
+export default function AboutPage() {
+    const [content,setContent]=useState(false)
+
+    useEffect( () => {
+        fetchAPI('/about-pages').then(res=>{
+            console.log(res)
+            setContent(res)
+        })
+    }, []);
 
     if (!content) return <p>Loading...</p>;
 

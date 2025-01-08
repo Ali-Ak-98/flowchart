@@ -1,0 +1,38 @@
+{
+  "nodes": [
+    {
+      "id": "start",
+      "type": "start",
+      "name": "Start Process",
+      "connections": ["step1"]
+    },
+    {
+      "id": "step1",
+      "type": "block",
+      "name": "Step 1",
+      "connections": ["step2", "step3"]
+    },
+    {
+      "id": "step2",
+      "type": "block",
+      "name": "Step 2",
+      "connections": ["end"]
+    },
+    {
+      "id": "step3",
+      "type": "block",
+      "name": "Step 3",
+      "connections": ["end"]
+    },
+    {
+      "id": "end",
+      "type": "end",
+      "name": "End Process",
+      "connections": []
+    }
+  ],
+  "links": [
+    { "source": "start", "target": "step1" },
+    { "source": "step1", "target": "end" }
+  ]
+}
