@@ -1,9 +1,13 @@
 import { fetchAPI } from '@/lib/api';
+import {useEffect} from "react";
 
 export default async function Homepage() {
-    const content = await fetchAPI('/homepages');
-    console.log(content)
+    let content=false
+    useEffect(() => {
+        content=fetchAPI('/homepages');
+    }, []);
 
+    console.log(content)
     if (!content) return <p>Loading...</p>;
 
     return (
