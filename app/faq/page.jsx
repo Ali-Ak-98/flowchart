@@ -1,5 +1,3 @@
-'use client'
-
 import { fetchAPI } from '@/lib/api';
 
 export default async function FAQPage() {

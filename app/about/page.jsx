@@ -1,5 +1,3 @@
-'use client'
-
 import { fetchAPI } from '@/lib/api';
 
 export default async function AboutPage() {
@@ -16,7 +14,7 @@ export default async function AboutPage() {
                 <img
                     className={'w-1/3 object-contain'}
                     key={image.url}
-                    src={`${process.env.NEXT_PUBLIC_BASE_URL+'/'+image?.url}`}
+                    src={`${process.env.NEXT_PUBLIC_BASE_URL+image?.url}`}
                     alt={image?.alternativeText || 'About'}
                 />
             ))}
