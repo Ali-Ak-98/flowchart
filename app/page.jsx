@@ -1,12 +1,12 @@
 'use client';
 
 import { fetchAPI } from '@/lib/api';
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 
 export default async function Homepage() {
-    let content=false
-    useEffect(() => {
-        content=fetchAPI('/homepages');
+    const [content,setContent]=useState(false)
+    useEffect(async () => {
+        setContent(await fetchAPI('/homepages'));
     }, []);
 
     console.log(content)
